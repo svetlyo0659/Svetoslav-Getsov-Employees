@@ -1,0 +1,53 @@
+#openapi: 3.0.1
+#
+#info:
+#  version: '2.0.0'
+#  title: CSV Reader Application
+#  description: |
+#    <h2> CSV Reader app. </h2>
+#  contact:
+#    name: Svetoslav Getsov
+#    url: ''
+#servers:
+#  - url: http://localhost:8080/api/v1
+#security:
+#  - basicAuth: []
+#
+#tags:
+#  - name: CSV File Upload
+#    description: 'Upload a csv file containing employees work records'
+#paths:
+#  '/read':
+#    post:
+#      description: Upload & read csv file containing employees work records.
+#      operationId: CSV file upload
+#      tags: [ CSV File Upload ]
+#      security:
+#        - basicAuth: []
+#      parameters:
+#        - name: name
+#          in: query
+#          description: Full name.
+#          required: true
+#          schema:
+#            type: string
+#        - name: type
+#          in: query
+#          description: Private Entity or Legal Entity
+#          required: true
+#          schema:
+#            type: string
+#            enum:
+#              - CSV File
+#            default: Private Entity
+#      responses:
+#        '400':
+#          description: BAD REQUEST
+#        '200':
+#          description: OK
+#
+#components:
+#  securitySchemes:
+#    basicAuth:     # <-- arbitrary name for the security scheme
+#      type: http
+#      scheme: basic
